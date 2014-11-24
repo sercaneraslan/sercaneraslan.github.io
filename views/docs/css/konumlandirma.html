@@ -1,0 +1,48 @@
+<h1 ng-title>CSS Konumlandırma - Positioning</h1><p>CSS konumlandırma özelliği öğelerin konumlandırmasını sağlar. Bir öğenin arkasına başka bir öğeyi yerleştirebilirsiniz ve bir öğenin içeriğinin fazla büyük olduğu durumlarda ne yapması gerektiğini belirtebilirsiniz.</p><p>Üst, alt, sol, ve sağ yönlerinden elemanlara konum verebiliriz. Eğer konumlandırma özelliği kodda ilk satır olarak yazılmazsa konumlandırma özelliği çalışmayacaktır.</p><p>Dört farklı konumlandırma yöntemi vardır.</p><h2>CSS Statik Konumlandırma - Static Positioning</h2><p>HTML/XHTML öğeleri varsayılan olarak statik konumlandırılmıştır. Statik olarak ayarlanmış bir eleman her zaman sayfanın normal akışına göre konumlandırılır, yani elemanlar sayfaya sabittir, kaydırma çubuğu ile birlikte aşağı yukarı hareket ederler.</p><p>Statik konumlandırma özelliği top, right, bottom ve left özelliklerinden etkilenmez.</p><h2>CSS Tutturulmuş Konumlandırma - Fixed Positioning</h2><p>Tutturulmuş konumlandırma özelliği elemanı sayfada sabitler ve kaydırma çubuğu aşağı yukarı yapıldığında eleman sabit kalır.</p><pre>
+    <code class="language-css" prism>
+.tutturulmus-konum {
+    position: fixed;
+    top: 40px;
+    right: 15px;
+}
+    </code>
+</pre><p>Not: HTML/XHTML kodumuzda "!DOCTYPE" varsa Internet Explorer bu özelliği destekler.</p><p>Tutturulmuş konumlu öğeler normal akıştan çıkarılır. Elemanlar, tutturulmuş konumlu öğenin var olmadığı gibi davranır. Tutturulmuş konumlu öğeler ile diğer öğeler çakışabilir, o yüzden pozisyonu iyi belirmeniz önerilir.</p><h2>CSS Göreceli Konumlandırma - Relative Positioning</h2><p>Göreceli konumlandırma özelliği, normal konumlamalara göre göreceli olarak konumlandırma sağlar. Örneğin, normal konumlandırmayı sıfır olarak düşünürsek ve bir class 'a "position: relative;" ve "left: -25px;" verirsek class'ımızın bağlı olduğu eleman normal konumlandırılmış elemanlara göre 25 piksel daha solda konumlanacaktır.</p><pre>
+    <code class="language-css" prism>
+.goreceli-konum {
+    position: relative;
+    left: -25px;
+}
+    </code>
+</pre><p>Relative ile konumlanmış elemanlar taşınabilir ve diğer elemanları etkileyebilir.</p><h2>CSS Mutlak Konumlandırma - Absolute Positioning</h2><p>Mutlak konumlandırma özelliği, bizim verdiğimiz yön özelliklerini (top, right, bottom, left) tarayıcıyı baz alarak tam anlamıyla uygular. Relative konumlandırmada ise verilen yön özelliklerini çevresinde ki elemanlara göre ayarlar.</p><pre>
+    <code class="language-css" prism>
+.mutlak-konum {
+    position: absolute;
+    left: 120px;
+    top: 180px;
+}
+    </code>
+</pre><h2>CSS z-index ( Örtüşen Elemanlar ) - Overlapping Elements</h2><p>z-index özelliği ile üst üste gelen iki elemandan hengisinin üstte ya da hangisinin altta kalacağını belirleyebiliriz. Bu özellikte eksi kullanımı vardır. Örneğin, bir elemanın altta kalmasını istiyorsak z-index: -1; kodunu yazabiliriz. Diğer elemanın üstte kalmasını istiyorsakta z-index: 1; kodunu yazabiliriz.</p><pre>
+    <code class="language-css" prism>
+p {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    z-index: 1;
+}
+    </code>
+</pre><p>Unutmamak gerekir ki z-index değeri en yüksek olan eleman en üstte yer alır, z-index değeri en küçük olan eleman ise en altta yer alır.</p><h2>CSS Overflow Özelliği - Overflow Property</h2><p>Bir "div" elemanımız var, bu bölüm içinde ki içerik bu bölüme sığmıyor ve dışarı taşıyor. Bu durumda "div"in kenarında bir kaydırma çubuğu çıkartabiliriz ya da fazla olan içeriğin görünmesini engelleyebiliriz. Overflow değerlerini görelim.</p><ul><li>visible : Bölüm içinde ki içerik bölüm içine sığmazsa dışarı taşar. Varsayılan.</li><li>hidden : Sığmayan içeriği yok sayar.</li><li>scroll : Sığmayan içerik için kaydırma çubuğu çıkarır.</li><li>auto : İçerik sığmamaya başladığında otomatik olarak kaydırma çubuğu çıkarır.</li></ul><pre>
+    <code class="language-css" prism>
+div {
+    width: 200px;
+    height: 200px;
+    overflow: scroll;
+}
+    </code>
+</pre><h2>CSS Clip Özelliği - Clip Property</h2><p>Görselin, "div" elemanından daha büyük olması durumunda görseli clip özelliği ile "div" içine sığacak şekilde kırpabiliriz.</p><pre>
+    <code class="language-css" prism>
+.gorsel-kirpma {
+    position: absolute;
+    clip: rect(5px, 10px, 20px, 5px);
+}
+    </code>
+</pre><p>"rect" içinde ki sıralama şu şekildedir: top, right, bottom, left. "overflow: visible;" olduğunda bu özellik çalışmaz.</p><h2>CSS Cursor Özelliği - Cursor Property</h2><p>Bir eleman üzerine gelindiğinde imlecin değişmesini istiyorsak cursor özelliğini kullanacağız. Aşağıdaki elemanların üzerine fare ile gelerek imlecin nasıl değiştiğini görebilirsiniz.</p><ul><li style="cursor: crosshair">crosshair : İmlecin artı işareti şeklinde gözükmesini sağlar.</li><li style="cursor: auto">auto : İmlecin metinde dikey çizgi, boş alanda normal ok şeklinde gözükmesini sağlar.</li><li style="cursor: default">default : İmlecin hem metinde hem de boş alanda normal ok şeklinde gözükmesini sağlar.</li><li style="cursor: pointer">pointer : İmlecin linkte olduğu gibi el şeklinde gözükmesini sağlar.</li><li style="cursor: move">move : İmlecin taşıma işareti şeklinde gözükmesini sağlar.</li><li style="cursor: ne-resize">ne-resize : İmlecin sağa yatık normal ok şeklinde gözükmesini sağlar.</li><li style="cursor: nw-resize">nw-resize : İmlecin sola yatık normal ok şeklinde gözükmesini sağlar.</li><li style="cursor: se-resize">se-resize : İmlecin yukardan aşağı doğru ve sağa yatık normal ok şeklinde gözükmesini sağlar.</li><li style="cursor: sw-resize">sw-resize : İmlecin yukardan aşağı doğru ve sola yatık normal ok şeklinde gözükmesini sağlar.</li><li style="cursor: n-resize">n-resize : İmlecin aşağıdan yukarıya doğru ince ok şeklinde gözükmesini sağlar.</li><li style="cursor: s-resize">s-resize : İmlecin yukardan aşağı doğru ince ok şeklinde gözükmesini sağlar.</li><li style="cursor: w-resize">w-resize : İmlecin sola doğru ince ok şeklinde gözükmesini sağlar.</li><li style="cursor: e-resize">e-resize : İmlecin sağa doğru ince ok şeklinde gözükmesini sağlar.</li><li style="cursor: text">text : İmlecin hem metinde hem de boş alanda metinde olduğu gibi gözükmesini sağlar.</li><li style="cursor: wait">wait : İmlecin meşgul animasyonuna dönüşmesini sağlar.</li><li style="cursor: help">help : İmlecin soru işaretine dönüşmesini sağlar</li><li>url : Yeni imleç eklememizi sağlar. cursor: url(yeni.cur) olarak kullanımı vardır. Sadece .cur dosyalarını destekler.</li></ul>

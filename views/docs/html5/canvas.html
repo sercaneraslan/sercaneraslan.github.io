@@ -1,0 +1,28 @@
+<h1 ng-title>HTML5 Canvas</h1><p>&lt;canvas&gt; elemanı web sayfasına grafik çizmek için genellikle JavaScript ile kullanılır. &lt;canvas&gt; "height" ve "width" öznitelikleri ile çizilebilir bir alan oluşturur. Canvas ile kutular, daireler, karakterler, görseller ve daha fazlasını çizdirebilirsiniz.</p><p>&lt;canvas&gt; elemanını tanımlarken "id", "width" ve "height" öznitelikleri verilmelidir.</p><pre>
+    <code class="language-markup" prism>
+&lt;canvas id="myCanvas" width="200" height="100"&gt;&lt;/canvas&gt;
+    </code>
+</pre><h2>JavaScript ile Çizim</h2><p>&lt;canvas&gt; elemanının kendi çizim yetenekleri yoktur. Tüm çizimler JavaScript içinde yapılır.</p><pre>
+    <code class="language-markup" prism>
+&lt;script type="text/javascript"&gt;
+    var myCanvas = document.getElementById('myCanvas'),
+        ctx = myCanvas.getContext('2d');
+
+        ctx.fillStyle = '#2cc185';
+        ctx.fillRect(0, 0, 150, 75);
+&lt;/script&gt;
+    </code>
+</pre><p>JavaScript, id kullanarak &lt;canvas&gt; elemanını bulur.</p><pre>
+    <code class="language-javascript" prism>
+var myCanvas = document.getElementById('myCanvas'),
+    </code>
+</pre><p>Sonra bir içerik nesnesi oluşturur. GetContext("2d") nesnesi yerleşik bir HTML5 nesnesidir.</p><pre>
+    <code class="language-javascript" prism>
+ctx = myCanvas.getContext('2d');
+    </code>
+</pre><p>Aşağıdaki iki satır, kırmızı bir dikdörtgen çizer:</p><pre>
+    <code class="language-javascript" prism>
+ctx.fillStyle = '#2cc185';
+ctx.fillRect(0, 0, 150, 75);
+    </code>
+</pre><p>fillStyle özniteliği rengi yeşil yapar, fillRect ise şeklini, konumunu ve boyutunu belirler. ilk iki değer yukarıda ve soldan olan mesafeyi ayarlar son iki değer ise oluşturduğumuz kutunun genişliğini ve yüksekliğini belirler.</p><p>Örnek 1</p><div codepen cp-user="sercaneraslan" cp-slug-hash="oJdbj" cp-height="200"></div><p>Örnek 2</p><div codepen cp-user="sercaneraslan" cp-slug-hash="ywqet" cp-height="250"></div>

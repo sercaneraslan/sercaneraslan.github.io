@@ -1,0 +1,56 @@
+<h1 ng-title>CSS Seçicileri Gruplama - Grouping Selectors</h1><p>Aşağıdaki gibi bir kodumuz varsa;</p><pre>
+    <code class="language-css" prism>
+h1 {
+    color: #DBDBDB;
+}
+
+h2 {
+    color: #DBDBDB;
+}
+
+p {
+    color: #DBDBDB;
+}
+    </code>
+</pre><p>Yani tüm seçicilerin özellikleri ve değerleri aynı ise bu seçicileri virgül ile ayırarak gruplayabiliriz. Ayrıca bu durumda kod tasarrufu yapıp daha az kod yazmış olacağız. Yukarıda ki kodu nasıl küçültüp grupladığımızı görelim.</p><pre>
+    <code class="language-css" prism>
+h1,
+h2,
+p {
+    color: #DBDBDB;
+}
+    </code>
+</pre><h2>CSS Seçicileri İç içe Yerleştirme - Nesting Selectors</h2><p>Aşağıdaki gibi bir XHTML ve CSS kodumuz var;</p><pre>
+    <code class="language-markup" prism>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http: //www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http: //www.w3.org/1999/xhtml" lang="en" xml: lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv="content-type" content="text/html; charset=utf-8;" /&gt;
+        &lt;link rel="stylesheet" type="text/css" href="dosyaAdi.css" /&gt;
+        &lt;title&gt;Başlık Buraya&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="ozel-makale"&gt;
+            &lt;p&gt;Bu bir paragraf.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;p&gt;Bu da bir paragraf.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+    </code>
+</pre><pre>
+    <code class="language-css" prism>
+.ozel-makale {
+    background-color: blue;
+}
+
+p {
+    color: gray;
+}
+    </code>
+</pre><p>Yukarıdaki CSS kodumuz tüm "p" etiketlerinin içerik renklerini "gri" olarak, ve "ozel-makale" class'lı div'imizin arkaplan rengini "mavi" olarak tanımladı.</p><p>Biz "ozel-makale" class'lı div'in altında ki "p" etiketinin içerik renginin "beyaz" olmasını istersek şu kullanımı uygulayacağız.</p><pre>
+    <code class="language-css" prism>
+.ozel-makale p {
+    color: white;
+}
+    </code>
+</pre>
