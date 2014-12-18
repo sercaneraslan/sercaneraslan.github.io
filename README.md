@@ -1,11 +1,11 @@
 <a href="http://sercaneraslan.com">
-![sercaneraslan](https://raw.githubusercontent.com/sercaneraslan/sercaneraslan.com/master/app/img/static/readme.png)
+![sercaneraslan](https://github.com/sercaneraslan/sercaneraslan.github.io/blob/creator/app/img/static/readme.png)
 </a>
 
-Sercan Eraslan Website on Github
-================================
+Sercan Eraslan Website on Github Pages
+======================================
 
-<a href="http://sercaneraslan.com">Personal Website on Github</a>. Creator repo is <a href="https://github.com/sercaneraslan/sercaneraslan.com">sercaneraslan/sercaneraslan.com</a>.
+<a href="http://sercaneraslan.com">sercaneraslan.com</a>. Creator branch is `creator`.
 
 ## Contributing
 Feel free to open an issue or send a pull request.
