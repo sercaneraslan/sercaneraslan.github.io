@@ -317,7 +317,7 @@ module.exports = function (grunt) {
         'copy:img',
         'copy:font',
         'copy:js',
-        'sprite',
+        //'sprite',
         'stylus:development',
         'template:development',
         'connect:server',
@@ -330,7 +330,7 @@ module.exports = function (grunt) {
         'copy:json',
         'copy:img',
         'copy:font',
-        'sprite',
+        //'sprite',
         'stylus:live',
         //'jade:live', // For Jade
         'htmlmin:views', // For HTML
