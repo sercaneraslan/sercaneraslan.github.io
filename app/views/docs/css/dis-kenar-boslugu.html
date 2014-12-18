@@ -1,0 +1,41 @@
+<h1 ng-title>CSS Dış Kenar Boşluğu - Margin</h1>
+
+<p>Margin etiketlerin/elemanların çevresini temizler/boşaltır. Margin tamamen şeffaftır ve bir arkaplan rengi yoktur.</p>
+
+<p>margin kullanıldığında etiketlerin/elemanların 4 bir yanıda temizlenir/boşaltılır. Üst, sağ, alt ve sol kenarlar birbirinden bağımsız olarakta kullanılabilir.</p>
+
+<ul>
+    <li>margin</li>
+    <li>margin-top</li>
+    <li>margin-right</li>
+    <li>margin-bottom</li>
+    <li>margin-left</li>
+</ul>
+
+<p>Tüm margin özelliklerinde piksel (margin: 10px;), yüzde (margin-top: 50%;) ve em (margin-left: 1.5em) kullanılabilmektedir. Ayrıca "auto" özelliği de kullanılabilmektedir. "auto" özelliği kullanıldığında mesafeyi tarayıcı/browser kendi ayarlayacaktır. Eksi kullanımı mümkündür (margin-bottom: -10px;).</p>
+
+<h2>CSS Çoklu Dış Kenar Boşluğu Kullanımı</h2>
+
+<p>Bir kutunun her açısında farklı margin kullanmak mümkündür.</p>
+
+<pre>
+    <code class="language-css" prism>
+div {
+    margin-top: 100px;
+    margin-right: 50px;
+    margin-bottom: 100px;
+    margin-left: 50px;
+}
+    </code>
+</pre>
+
+<h2>CSS Dış Kenar Boşluğu Kısa Yazım</h2>
+
+<p>Dış kenar boşluğu / margin için kısa yazımı görelim.</p>
+
+<ul>
+    <li>margin: 25px 50px 75px 100px; (üst 25 piksel, sağ 50 piksel, alt 75 piksel, sol 100 piksel olur.)</li>
+    <li>margin: 25px 50px 75px; (üst 25 piksel, sağ ve sol 50 piksel, alt 75 piksel olur.)</li>
+    <li>margin: 25px 50px; (üst ve alt 25 piksel, sağ ve sol 50 piksel olur.)</li>
+    <li>margin: 25px; (Tüm dış kenar boşlukları 25 piksel olur.)</li>
+</ul>

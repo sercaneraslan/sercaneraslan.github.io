@@ -1,0 +1,82 @@
+/*
+*
+* Homepage Styles
+*
+*/
+
+@import mixins
+
+.about
+    background linear-gradient(#32B7C6, #E5E9B4)
+    box-sizing border-box
+    padding 20% 0
+    position absolute
+    top 0
+    right 0
+    left 0
+    bottom 0
+
+    h1
+        margin 20px 0px 30px 0
+        font-size 17px
+        color $white
+        text-align center
+
+        span
+            display block
+            font-size 32px
+            color $white
+            margin-bottom 5px
+
+    img
+        display block
+        height 200px
+        width 200px
+        border-radius 50%
+        margin 0 auto
+        border 3px solid $white
+    
+    p
+        width 450px
+        margin 0 auto
+        text-align center
+        line-height 22px
+        font-size 14px
+        color $white
+
+        a
+            color $white
+
+    ul
+        width 155px
+        margin 30px auto
+
+        li
+            float left
+            margin-left 8px
+
+            a
+                font normal normal normal 14px/1 FontAwesome
+                text-rendering auto
+                -webkit-font-smoothing antialiased
+                -moz-osx-font-smoothing grayscale
+                font-size 25px
+                color $white
+
+            .github:before
+                content "\f092"
+
+            .codepen:before
+                content "\f1cb"
+
+            .bitbucket:before
+                content "\f172"
+
+            .twitter:before
+                content "\f081"
+
+            .linkedIn:before
+                content "\f08c"
+
+            .email:before
+                content "\f199"

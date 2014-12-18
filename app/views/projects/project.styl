@@ -1,0 +1,45 @@
+/*
+*
+* Homepage Styles
+*
+*/
+
+@import mixins
+
+.projects
+    background linear-gradient(#32B7C6, #E5E9B4)
+    box-sizing border-box
+    padding 20% 0
+    position absolute
+    top 0
+    right 0
+    left 0
+    bottom 0
+
+    .menu
+        alignment()
+        margin-top 75px
+
+        > li
+            float left
+            width 33%
+
+            ul
+                li
+                    float none
+                    margin-bottom 20px
+                    text-align center
+
+                    h2
+                        font-size 25px
+                        margin-bottom 50px
+                        color $white
+                        padding 15px
+                        border 2px solid $white
+                        border-radius 5px
+                        width 60%
+                        margin 0 auto
+
+                    a
+                        color $white
+                        font-size 15px

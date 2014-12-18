@@ -1,0 +1,76 @@
+<h1 ng-title>CSS Sözde Öğeler - Pseudo Elements</h1>
+
+<p>CSS sözde öğeleri, bazı seçicilere özel efektler eklemek için kullanılır.</p>
+
+<h2>Sözde Öğeler Yazım Kuralı</h2>
+
+<pre>
+    <code class="language-css" prism>
+secici:sozde-oge {
+    ozellik: deger;
+}
+    </code>
+</pre>
+
+<p>Örnek olarak görelim.</p>
+
+<pre>
+    <code class="language-css" prism>
+p:first-line {
+    color: orange;
+}
+    </code>
+</pre>
+
+<pre>
+    <code class="language-css" prism>
+.ozel-stil:first-letter {
+    color: blue;
+}
+    </code>
+</pre>
+
+<h2>:first-line Özelliği</h2>
+
+<p>Bir elemenanın ilk satırına stil vermek için kullanılır. Sonra ki satırlar normal olarak görüntülenir.</p>
+
+<pre>
+    <code class="language-css" prism>
+p:first-line {
+    color: orange;
+}
+    </code>
+</pre>
+
+<h2>:first-letter Özelliği</h2>
+
+<p>Bir elemenanın ilk satırında ki ilk harfine/karakterine stil vermek için kullanılır. Sonra ki harfler/karakterler normal olarak görüntülenir.</p>
+
+<pre>
+    <code class="language-css" prism>
+p:first-letter {
+    color: orange;
+    font-size: 25px;
+}
+    </code>
+</pre>
+
+<h2>:after ve :before Özellikleri</h2>
+
+<p>Bir elemanın önüne CSS ile bir içerik eklenmek istendiğinde ":before" sözde öğesi kullanılabilir. Bir elemanın arkasına ise CSS ile bir içerik eklenmek istendiğinde ":after" sözde öğesi kullanılabilir.</p>
+
+<p>CSS Kodumuz:</p>
+
+<pre>
+    <code class="language-css" prism>
+p:before {
+    content: "Merhaba!";
+}
+
+h1:after {
+    content: url(dosya1.jpg);
+}
+    </code>
+</pre>
+
+<p>Bu kod çalıştırıldığında her "p" etiketinin başına "Merhaba!" yazacak ve her "h1" etiketinin sonuna "dosya1.jpg" adlı gorseli ekleyecek.</p>

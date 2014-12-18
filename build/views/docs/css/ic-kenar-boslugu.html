@@ -1,0 +1,41 @@
+<h1 ng-title>CSS İç Kenar Boşluğu - Padding</h1>
+
+<p>Padding, eleman ile eleman içerisinde ki içeriğin arasında ki mesafeyi belirlemek için kullanılır. Padding, elemanın arkaplan renginden etkilenmektedir.</p>
+
+<p>Padding kullanıldığında 4 iç kenarda boşluk oluşacaktır. Üst, sağ, alt ve sol kenarlarda birbirinden bağımsız olarak boşluklar verilebilir.</p>
+
+<ul>
+    <li>padding</li>
+    <li>padding-top</li>
+    <li>padding-right</li>
+    <li>padding-bottom</li>
+    <li>padding-left</li>
+</ul>
+
+<p>Tüm padding özelliklerinde piksel (padding: 10px;), yüzde (padding-top: 50%;) ve em (padding-left: 1.5em) kullanılabilmektedir.</p>
+
+<h2>CSS Çoklu İç Kenar Boşluğu Kullanımı</h2>
+
+<p>Bir kutunun her açısında farklı padding kullanmak mümkündür.</p>
+
+<pre>
+    <code class="language-css" prism>
+div {
+    padding-top: 100px;
+    padding-right: 50px;
+    padding-bottom: 100px;
+    padding-left: 50px;
+}
+    </code>
+</pre>
+
+<h2>CSS İç Kenar Boşluğu Kısa Yazım</h2>
+
+<p>İç kenar boşluğu / padding için kısa yazımı görelim.</p>
+
+<ul>
+    <li>padding: 25px 50px 75px 100px; (üst 25 piksel, sağ 50 piksel, alt 75 piksel, sol 100 piksel olur.)</li>
+    <li>padding: 25px 50px 75px; (üst 25 piksel, sağ ve sol 50 piksel, alt 75 piksel olur.)</li>
+    <li>padding: 25px 50px; (üst ve alt 25 piksel, sağ ve sol 50 piksel olur.)</li>
+    <li>padding: 25px; (Tüm iç kenar boşlukları 25 piksel olur.)</li>
+</ul>

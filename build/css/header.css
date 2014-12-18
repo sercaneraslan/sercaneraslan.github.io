@@ -1,0 +1,96 @@
+/*
+*
+* Header Styles
+*
+*/
+header {
+  background: rgba(255,255,255,0.5);
+  height: 65px;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+header div {
+  width: 1024px;
+  margin: 0 auto;
+}
+header p {
+  float: left;
+}
+header p a {
+  display: inline-block;
+  padding: 14px 25px 11px 67px;
+  margin: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 60px;
+  position: relative;
+}
+header p a:hover {
+  color: #fff;
+  transition: all ease 0.5s;
+}
+header p a:before {
+  content: "\e639";
+  font-family: Helium;
+  color: #fff;
+  font-size: 40px;
+  position: absolute;
+  top: 2px;
+  left: 17px;
+  transform: rotate(0deg);
+  transition: all ease 0.5s;
+}
+header p a:hover:before {
+  transform: rotate(360deg);
+  transition: all ease 0.5s;
+}
+header ul {
+  float: right;
+  margin-top: 25px;
+}
+header ul li {
+  float: left;
+  margin-left: 8px;
+}
+header ul li a {
+  font-size: 15px;
+  color: #fff;
+}
+/* Documents Header */
+.xhtml header,
+.css header,
+.html5 header {
+  background: #2a333b;
+}
+.xhtml header p a,
+.css header p a,
+.html5 header p a {
+  background: #dedede;
+  color: #2a333b;
+  border: 2px solid #f7f7f7;
+}
+.xhtml header p a:hover,
+.css header p a:hover,
+.html5 header p a:hover {
+  color: #f7f7f7;
+  background: #5fd9ae;
+}
+.xhtml header p a:before,
+.css header p a:before,
+.html5 header p a:before {
+  color: #2a333b;
+}
+.xhtml header p a:hover:before,
+.css header p a:hover:before,
+.html5 header p a:hover:before {
+  color: #f7f7f7;
+}
+.xhtml header ul li a,
+.css header ul li a,
+.html5 header ul li a {
+  color: dirtyWhite;
+}

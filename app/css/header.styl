@@ -1,0 +1,88 @@
+/*
+*
+* Header Styles
+*
+*/
+@import mixins
+
+header
+    background rgba(255, 255, 255, 0.5)
+    height 65px
+    z-index 10
+    position fixed
+    top 0
+    left 0
+    right 0
+
+    div
+        alignment()
+
+    p
+        float left
+
+        a
+            display inline-block
+            padding 14px 25px 11px 67px
+            margin 10px 0
+            font-size 16px
+            color $white
+            border 2px solid $white
+            border-radius 60px
+            position relative
+
+            &:hover
+                color $white
+                transition all ease .5s
+
+            &:before
+                content "\e639"
+                font-family Helium
+                color $white
+                font-size 40px
+                position absolute
+                top 2px
+                left 17px
+                transform rotate(0deg)
+                transition all ease .5s
+
+            &:hover:before
+                transform rotate(360deg)
+                transition all ease .5s
+
+    ul
+        float right
+        margin-top 25px
+
+        li
+            float left
+            margin-left 8px
+
+            a
+                font-size 15px
+                color $white
+
+/* Documents Header */
+.xhtml
+.css
+.html5
+    header
+        background $smokedColor
+        
+        p
+            a
+                background $softGray
+                color $smokedColor
+                border 2px solid $dirtyWhite
+                
+                &:hover
+                    color $dirtyWhite
+                    background $green
+                    
+                &:before
+                    color $smokedColor
+                    
+                &:hover:before
+                    color $dirtyWhite
+
+        ul li a
+            color dirtyWhite

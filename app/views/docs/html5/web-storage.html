@@ -1,0 +1,70 @@
+<h1 ng-title>HTML5 Web Storage - Web Depolama</h1>
+
+<p>HTML5 ile web sayfaları, kullanıcının tarayıcısında yerel olarak veriyi depolayabilir. Daha önce bu cookie 'lerle yapılırdı. Web depolaması cookie 'lere göre daha güvenli ve daha hızlıdır. Veri, her server request'inde sayfaya dahil edilmez. Ne zaman veri çağırılırsa o zaman kullanılır. Büyük miktarlarda ki verileri depolamak mümkündür hemde web sitenin performansını etkilemeden. Veri, key/value (anahtar/değer) çiftlerinde depolanır.</p>
+
+<p>Web Storage özelliğini gelişmiş tarayıcıların hepsi destekler.</p>
+
+<h2>localStorage ve sessionStorage</h2>
+
+<p>Client'da (Browser'da) veriyi depolamak için iki yeni nesne vardır:</p>
+
+<ul>
+    <li>LocalStorage — Sona erme tarihi olmadan veri depolar.</li>
+    <li>SessionStorage — Yanlızca bir oturum için veri depolar.</li>
+</ul>
+
+<p>Tarayıcıların Web Storage özelliğini destekleyip desteklemediğini öğrenmek için aşağıdaki kodu kullanacağız;</p>
+
+<pre>
+    <code class="language-javascript" prism>
+if (typeof(Storage) !== 'undefined') {
+    // localStorage ve sessionStorage özellikleri destekleniyor.
+    // Kodlarımızı yazıyoruz...
+} else {
+    // Tarayıcı Web Storage özelliğini desteklemiyor.
+}
+    </code>
+</pre>
+
+<h2>localStorage Nesnesi</h2>
+
+<p>LocalStorage nesnesi, Sona erme tarihi olmadan veriyi depolar. Veri, tarayıcı kapatıldığı zaman silinmeyecek ve bir sonraki gün erişilebilir olacak hatta haftalar, aylar ve yıllar sonra da.</p>
+
+<pre>
+    <code class="language-javascript" prism>
+if (typeof(Storage) !== 'undefined') {
+    localStorage.lastname = 'Eraslan';
+    document.getElementById('result').innerHTML = 'Soyisim: ' + localStorage.lastname;
+} else {
+    document.getElementById('result').innerHTML = 'Tarayıcınız, Web Storage özelliğini desteklemiyor.';
+}
+    </code>
+</pre>
+
+<p>Örnek açıklaması:</p>
+
+<p>key/value çiftleri (key="lastname" ve value="Eraslan") ile localStorage oluşturduk. Sonra "result" id'li elemanın içine depolanan veriyi yazdırdık. Eğer tarayıcı Web Storage özelliğini desteklemiyorsa da uyarı verdik.</p>
+
+<p>key/value çiftleri her zaman string olarak depolanır. İhtiyaç duyulduğunda başka bir formata döndürülebilir.</p>
+
+<h2>sessionStorage Nesnesi</h2>
+
+<p>sessionStorage nesnesinin localStorage nesnesinden farkı şunlardır;</p>
+
+<ul>
+    <li>sessionStorage 'de tarayıcı ya da tab kapatıldığında değerler silinir.</li>
+    <li>localStorage 'de tarayıcı ya da tab kapatıldığında değerler silinmez.</li>
+</ul>
+
+<p>Örnek kullanım:</p>
+
+<pre>
+    <code class="language-javascript" prism>
+if (typeof(Storage) !== 'undefined') {
+    sessionStorage.lastname = 'Eraslan';
+    document.getElementById('result').innerHTML = 'Soyisim: ' + sessionStorage.lastname;
+} else {
+    document.getElementById('result').innerHTML = 'Tarayıcınız, Web Storage özelliğini desteklemiyor.';
+}
+    </code>
+</pre>

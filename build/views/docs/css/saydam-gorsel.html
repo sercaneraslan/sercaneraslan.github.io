@@ -1,0 +1,30 @@
+<h1 ng-title>CSS Saydam Görsel - Image Opacity / Transparency</h1>
+
+<p>Internet Explorer için saydamlık "filter" özelliği ile sağlanır, "0" ile "100" arası saydamlık değeri verilebilir. Diğer tarayıcılar için ise "opacity" özelliği kullanılır ve "0.0" ile "1.0" arası saydamlık değeri alabilir. Kodumuzun her tarayıcıda aynı sonucu vermesini istiyorsak her iki özelliği birden kullanmalıyız.</p>
+
+<p>Görselimizin normal halini görelim...</p>
+
+<img src="/img/static/logo.png" width="200" height="150" alt="saydam_gorsel" />
+
+<p>Görselimizin saydam özelliği almış halini görelim...</p>
+
+<img src="/img/static/logo.png" width="200" height="150" alt="saydam_gorsel" style="opacity: 0.5; filter: alpha(opacity=50);" />
+
+<p>Saydam örneğimizin CSS kodunu görelim...</p>
+
+<pre>
+    <code class="language-css" prism>
+img {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+    </code>
+</pre>
+
+<p>Saydam örneğimizin HTML/XHTML kodunu görelim...</p>
+
+<pre>
+    <code class="language-markup" prism>
+&lt;img src="logo.png" width="200" height="150" alt="yuklenemedi" /&gt;
+    </code>
+</pre>

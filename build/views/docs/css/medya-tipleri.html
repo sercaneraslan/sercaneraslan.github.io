@@ -1,0 +1,90 @@
+<h1 ng-title>CSS Medya Tipleri - Media Types</h1>
+
+<p>Medya Tipleri değişik ortamlarda belgelerin nasıl sunulduğunu gösterir. Belgeler ekranda, kağıtta ve diğer tarayıcılar gibi ortamlarda değişik biçimlerde görüntülenebilir.</p>
+
+<p>Bazı CSS türleri yalnız belirli ortamlarda çalışacak biçimde tasarlanmıştır. Örneğin "voice-family (ses ailesi)" özellikleri işitsel kullanıcı ortamları için geçerlidir. Diğer türlerden bazıları (örneğin, "font-size" özelliği) yalnız ekran ve yazıcı ortamları için geçerli olabilir ama farklı değerlerle etkin olabilirler. Bir belge ekrandayken kağıda oranla daha büyük yazı tipine gereksinim duyar. Örneğin "sans-serif" yazı tipi ekranda daha okunaklıyken, "serif" yazı tipi kağıtta daha iyi olabilir.</p>
+
+<h2>@media Kuralı</h2>
+
+<p>@media kuralı değişik stil kurallarını değişik ortamlar için aynı CSS içinde tanımlamaya yarar.</p>
+
+<pre>
+    <code class="language-css" prism>
+@media screen {
+    p {
+        font-family: verdana, sans-serif;
+        font-size: 14px;
+    }
+}
+
+@media print {
+    p {
+        font-family: times,serif;
+        font-size: 10px;
+    }
+}
+
+@media screen, print {
+    p {
+        font-weight: bold;
+    }
+}
+    </code>
+</pre>
+
+<p>Yukarıdaki örnekte;</p>
+
+<ul>
+    <li>Ekranlarda yazı tipi "verdana", font boyutu ise "14px" olacak.
+    <li>Yazdırılacak sayfalarda yazı tipi "Times", font boyutu ise "10px" olacak.</li>
+    <li>Hem ekranlarda hemde yazdırılacak sayfalarda metinler "bold" olacak.</li>
+</ul>
+
+<h2>Değişik Ortam Türleri</h2>
+
+<table>
+    <tr>
+        <th>Ortam Türü</th>
+        <th>Açıklama</th>
+    </tr>
+    <tr>
+        <td>all</td>
+        <td>Her ortam türü birimlerinde kullanılır.</td>
+    </tr>
+    <tr>
+        <td>aural</td>
+        <td>Ses sentez birimlerinde kullanılır.</td>
+    </tr>
+    <tr>
+        <td>braille</td>
+        <td>Braille için dokunmalı geri besleme birimlerinde kullanılır.</td>
+    </tr>
+    <tr>
+        <td>embossed</td>
+        <td>Barille sayfalarının yazdırılmasında kullanılır.</td>
+    </tr>
+    <tr>
+        <td>handheld</td>
+        <td>Cep telefonları ve avuçiçi bilgisayarlar için kullanılır.</td>
+    </tr>
+    <tr>
+        <td>print</td>
+        <td>Yazıcılarda kullanılır.</td>
+    </tr>
+    <tr>
+        <td>projection</td>
+        <td>Slaytlar gibi proje sunumlarında kullanılır.</td>
+    </tr>
+    <tr>
+        <td>screen</td>
+        <td>Bilgisayar ekranlarında kullanılır.</td>
+    </tr>
+    <tr>
+        <td>tty</td>
+        <td>Terminaller gibi değişmez harflerle yazılması söz konusu olan ortamlarda kullanılır.</td>
+    </tr>
+    <tr>
+        <td>tv</td>
+        <td>Televizyon türü birimlerde kullanılır.</td>
+    </tr>
+</table>

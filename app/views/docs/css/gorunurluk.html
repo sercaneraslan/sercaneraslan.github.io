@@ -1,0 +1,121 @@
+<h1 ng-title>CSS Görünürlük &amp; Görüş - Display &amp; Visibility</h1>
+
+<p>CSS ile bir etiketin/elemanın görünmesini engelleyebiliriz ya da gizlenmesini sağlayabiliriz.</p>
+
+<h2>Elemanların Gizlenmesi</h2>
+
+<p>Elemanları gizlemenin iki yolu vardır, display: none veya visibility: hidden .</p>
+
+<p>Bu iki özellik birbirinden farklıdır, visibility: hidden sadece görünmez olmasını sağlar, elemanın özellikleri olduğu gibi durur.</p>
+
+<pre>
+    <code class="language-css" prism>
+.gizle {
+    visibility: hidden;
+}
+    </code>
+</pre>
+
+<p>display: none ise elemanı gizler ve elemanı yoksaydığımız için sayfada herhangi bir yer kaplamaz. </p>
+
+<pre>
+    <code class="language-css" prism>
+.yoksay {
+    display: none;
+}
+    </code>
+</pre>
+
+<h2>CSS Görünürlük - Blok ve Satıriçi Elemanlar / Display - Block and Inline Elements</h2>
+
+<p>Block/Blok elemanlar alabildiğine genişler ve yeni bir satırdan başlar.</p>
+
+<p>Blok elemanları görelim:</p>
+
+<ul>
+    <li>address</li>
+    <li>blockquote</li>
+    <li>dd</li>
+    <li>div</li>
+    <li>dl</li>
+    <li>fieldset</li>
+    <li>form</li>
+    <li>h1, h2, h3, h4, h5, h6</li>
+    <li>hr</li>
+    <li>li</li>
+    <li>noscript</li>
+    <li>ol</li>
+    <li>p</li>
+    <li>pre</li>
+    <li>table</li>
+    <li>tfoot</li>
+    <li>ul</li>
+</ul>
+
+<p>Inline/Satıriçi elemanlar, gerektiği kadar genişlik alır ve yeni bir satırdan başlamaz.</p>
+
+<p>Satıriçi elemanları görelim:</p>
+
+<ul>
+    <li>b</li>
+    <li>big</li>
+    <li>i</li>
+    <li>small</li>
+    <li>tt</li>
+    <li>abbr</li>
+    <li>acronym</li>
+    <li>cite</li>
+    <li>code</li>
+    <li>dfn</li>
+    <li>em</li>
+    <li>kbd</li>
+    <li>strong</li>
+    <li>samp</li>
+    <li>var</li>
+    <li>a</li>
+    <li>bdo</li>
+    <li>br</li>
+    <li>img</li>
+    <li>map</li>
+    <li>object</li>
+    <li>q</li>
+    <li>script</li>
+    <li>span</li>
+    <li>sub</li>
+    <li>sup</li>
+    <li>button</li>
+    <li>input</li>
+    <li>label</li>
+    <li>select</li>
+    <li>textarea</li>
+</ul>
+
+<p>Blok ve Satıriçi elemanları daha iyi anlamak için aşağıdaki örneği inceleyiniz.</p>
+
+<div codepen cp-user="sercaneraslan" cp-slug-hash="mkyqL" cp-height="300"></div>
+
+<h2>Değişen bir eleman nasıl görüntülenir</h2>
+
+<p>Bir öğenin "display" özelliğini "inline" veya "block" olarak degiştirerek, Web standartlarının dışına çıkmadan tasarımda güzel çözümler bulabilirsiniz.</p>
+
+<p>Aşağıdaki örnek, liste elemanlarını "inline" olarak göstermektedir: </p>
+
+<pre>
+    <code class="language-css" prism>
+li {
+    display: inline;
+}
+    </code>
+</pre>
+
+<p>Aşağıdaki örnek, span elemanlarını "block" olarak göstermektedir: </p>
+
+<pre>
+    <code class="language-css" prism>
+span {
+    display: block;
+}
+    </code>
+</pre>
+
+<p>Not: Bir elemanın görüntülenme tipini değiştirmek sadece onun nasıl göründüğünü değiştirir, elemanın ne olduğunu değil.</p>

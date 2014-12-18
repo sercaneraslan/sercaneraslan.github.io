@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="grabs">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="-1">
+        <meta name="googlebot" content="noarchive">
+        <meta name="Revisit-After" content="1 days">
+        <meta name="robots" content="index,follow">
+        <meta name="Author" content="Sercan Eraslan, info@sercaneraslan.com">
+        <meta name="Generator" Content="Sercan Eraslan"/>
+        <meta name="Designer" Content="Sercan Eraslan"/>
+        <meta name="Copyright" Content="2015"/>
+        <meta name="Description" content="Grabs Kurucu ve Geliştiricisi. Açık kaynak destekçisi. Bir sahibinden.com çalışanı. 30 dakikada XHTML, 40 dakikada CSS, 25 dakikada HTML5 kitaplarının yazarı."/>
+        <meta name="Keywords" content="Sercan Eraslan, Sercan, Eraslan, Front-End, Developer, Grabs"/>
+        <base href="/">
+        <link rel="shortcut icon" href="img/static/favicon.png">
+
+        <!-- Directive - ng-title -->
+        <title>Sercan Eraslan</title>
+
+        <!-- Development or Live Mode Styles -->
+        <% if (development) { %>
+            <% cssFiles.forEach(function (href) { %>
+                <link rel="stylesheet" type="text/css" href="<%= href %>">
+            <% }) %>
+        <% } else { %>
+            <link rel="stylesheet" type="text/css" href="css/app.min.<%= hash %>.css">
+        <% } %>
+    </head>
+    <body class="{{ pageName }}">
+
+        <!-- Include Header -->
+        <header ng-include="'views/common/header.html'"></header>
+
+        <!-- Main Content -->
+        <div ng-view class="container"></div>
+
+        <!-- Development or Live Mode Scripts -->
+        <% if (development) { %>
+            <% jsFiles.forEach(function (src) { %>
+                <script type="text/javascript" src="<%= src %>"></script>
+            <% }) %>
+            <script src="http://localhost:35729/livereload.js"></script>
+        <% } else { %>
+            <script type="text/javascript" src="js/app.min.<%= hash %>.js"></script>
+        <% } %>
+    </body>
+</html>

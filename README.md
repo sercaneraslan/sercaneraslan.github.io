@@ -1,11 +1,16 @@
 <a href="http://sercaneraslan.com">
-![sercaneraslan](https://raw.githubusercontent.com/sercaneraslan/sercaneraslan.com/master/app/img/static/readme.png)
+![sercaneraslan](app/img/static/readme.png)
 </a>
 
-Sercan Eraslan Website on Github
-================================
+Sercan Eraslan Website
+======================
 
-<a href="http://sercaneraslan.com">Personal Website on Github</a>. Creator repo is <a href="https://github.com/sercaneraslan/sercaneraslan.com">sercaneraslan/sercaneraslan.com</a>.
+<a href="http://sercaneraslan.com">Personel Website</a>. 
+
+Note: This Blog is using <a href="https://github.com/sercaneraslan/grabs">Grabs</a>
+
+## Documentation
+Please visit <a href="http://grabs.in">Grabs</a> website.
 
 ## Contributing
 Feel free to open an issue or send a pull request.

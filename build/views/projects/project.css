@@ -1,0 +1,43 @@
+/*
+*
+* Homepage Styles
+*
+*/
+.projects {
+  background: linear-gradient(#32b7c6, #e5e9b4);
+  box-sizing: border-box;
+  padding: 20% 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.projects .menu {
+  width: 1024px;
+  margin: 0 auto;
+  margin-top: 75px;
+}
+.projects .menu > li {
+  float: left;
+  width: 33%;
+}
+.projects .menu > li ul li {
+  float: none;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.projects .menu > li ul li h2 {
+  font-size: 25px;
+  margin-bottom: 50px;
+  color: #fff;
+  padding: 15px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  width: 60%;
+  margin: 0 auto;
+}
+.projects .menu > li ul li a {
+  color: #fff;
+  font-size: 15px;
+}

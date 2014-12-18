@@ -1,0 +1,42 @@
+<h1 ng-title>XHTML Giriş</h1>
+
+<p>HTML'in açılımı "Hyper Text Markup Language" tir, Türkçesi ise "Hareketli Metin İşaretleme Dili" dir. İnternet üzerinde web sayfası oluşturmak için kullanılır.  Dosya uzantısı ".html" ve  ".htm"olarak kullanılabilir. Bu dili yazabilmek için metin editörlerini (Not Defteri, TextMate, Sublime Text, Vim, Notepad++ vs) kullanabilirsiniz. Oluşturulan sayfayı görüntülemek için ise bir tarayıcı/browser (Firefox, Chrome, Opera, Internet Explorer vs.) yeterlidir. Bu dili öğrenmek oldukça basittir ve yazması çok keyiflidir.</p>
+
+<p>XHTML’in açılımı "Extensible Hypertext Markup Language" tir. Türkçesi ise "Geliştirilebilir Hareketli Metin İşaretleme Dili" dir. XHTML, HTML’in XML olarak düzenlenmiş halidir. Geliştirilebilir ve World Wide Web Consortium (W3C) 'u tarafından geçerli kabul edildiği için ve ayrıca içerisinde tamamıyla HTML'i barındırdığı için biz XHTML'i öğreneceğiz. Aslında XHTML öğrenirken HTML'i de öğrenmiş olacağız. HTML ile XHTML arasında 10 ufak fark bulunmaktadır.  Bu farkları <a href="/xhtml/farklar">Farklar</a> sayfasından öğrenebilirsiniz.</p>
+
+<p>XHTML etiketleri (tag'ları) açılırken "&lt;" ile "&gt;" işaretleri arasına yazılır, Örneğin, "&lt;html&gt;" , bu bir "html" açılış etiketidir. XHTML etiketleri kapanırken ise "&lt;/" ile "&gt;" işaretleri arasına yazılır, Örneğin, "&lt;/html&gt;" , bu bir "html" kapanış etiketidir. Unutulmamalıdır ki açılan her etiket kapanmalıdır. Etiket kapatmayı unutmamak için etiket açtığınız anda etiketi kapatmanızı öneririm.</p>
+
+<p>İlk örneğimizi görelim...</p>
+
+<pre>
+    <code class="language-markup" prism>
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; lang=&quot;en&quot; xml:lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+        &lt;title&gt;Sayfamızın Başlığı Burada Olacak&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;Body içerisinde yazacağımız herşey sayfamızda gözükecek&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+    </code>
+</pre>
+
+<p>Yukarıda bulunan etiketler, XHTML yazmak için olmazsa olmazlardandır, bu etiketler mutlaka olmalıdır. Kodun daha rahat okunması için iç içe yazılan etiketleri klavyede bulunan "Tab" tuşu ile ayırıyoruz.</p>
+
+<ul>
+    <li>"&lt;DOCTYPE&gt;" : Bu etiketi daha sonra ele alacağız ama şimdi bilgi almak isterseniz <a href="/xhtml/gecerli-kod">Geçerli Kod</a> sayfasından bilgi alabilirsiniz. Kafanızın karışmaması açısından daha sonra bakmanızı öneririm.</li>
+    <li>"&lt;html&gt;" : Bu etiket tarayıcıya/browser'a bu kodun hangi dil ile yazıldığını bildirir.</li>
+    <li>"&lt;head&gt;" : Bu etiketi de daha sonra ele alacağız ama şimdi bilgi almak isterseniz <a href="/xhtml/head">Head ve Meta</a> sayfasından bilgi alabilirsiniz. Kafanızın karışmaması açısından daha sonra bakmanızı öneririm.</li>
+    <li>"&lt;title&gt;" : Bu etiket içine yazılan her metin tarayıcının en üstünde (durum çubuğunda) bilgi olarak yer alır. Bir nevi sayfanın adı olarak düşünebilirsiniz.</li>
+    <li>"&lt;body&gt;" : Sayfa içerisinde görünmesini istediğimiz herşeyi/her kodu burada belirteceğiz.</li>
+    <li>"&lt;p&gt;" : Sayfa içerisine paragraf eklememizi sağlar, içine yazılan yazılar paragraf şeklinde gözükür.</li>
+</ul>
+
+<p>Yukarıda ki kodu kopyalayıp metin editörünüze yapıştırıp "deneme.html" şeklinde kaydedelim. Oluşturduğumuz dosyayı çift tıklayalım ve kodun sayfada nasıl gözüktüğünü inceleyelim. "title" ve "p" etiketi içinde ki metinleri değiştirerek denemeler yapabilirsiniz.</p>
+
+<div class="tip">
+    <h5>Tarayıcıda Türkçe karakterler görünmüyor!</h5>
+    <p>Eğer tarayıcıda Türkçe karakterleriniz görünmüyorsa yazdığınız kodun dilini "UTF-8 without BOM"a çevirmeniz gerekmektedir. Eğer hala sorun devam ediyorsa tarayıcınızın dilini "Unicode (UTF-8)" yapmanız gerekmektedir.</p>
+</div>

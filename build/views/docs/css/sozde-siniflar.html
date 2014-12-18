@@ -1,0 +1,119 @@
+<h1 ng-title>CSS Sözde Sınıflar - Pseudo Classes</h1>
+
+<h2>Sözde Sınıf/Pseudo-class Yazım Kuralı</h2>
+
+<p>Aslında sözde sınıfların ne olduğunu daha önce <a href="/css/linkler">linkler</a> başlığında görmüştük. Linklere stil verirken bu özelliği kullanıyorduk.</p>
+
+<p>Sözde sınıf yazım kuralını görelim.</p>
+
+<pre>
+    <code class="language-css" prism>
+secici:sozde-sinif {
+    ozellik: deger;
+}
+    </code>
+</pre>
+
+<p>Örnek:</p>
+
+<pre>
+    <code class="language-css" prism>
+a:link {
+    background: #FFFF85;
+}
+    </code>
+</pre>
+
+<pre>
+    <code class="language-css" prism>
+.ozel-stil:hover {
+    background: #DBDBDB;
+}
+    </code>
+</pre>
+
+<h2>first-child Sözde Sınıf</h2>
+
+<p>Örneğin bir "div" elemanımızın içinde 5 tane "p" etiketi var ve biz ilk sırada ki "p" etiketine CSS ile stil vermek istersek "first-child" sözde sınıfını kullanacağız.</p>
+
+<p>CSS Kodumuz:</p>
+
+<pre>
+    <code class="language-css" prism>
+p:first-child {
+    color: gray;
+}
+    </code>
+</pre>
+
+<p>HTML/XHTML Kodu</p>
+
+<pre>
+    <code class="language-markup" prism>
+&lt;div&gt;
+    &lt;p&gt;Bu birinci paragraf&lt;/p&gt;
+    &lt;p&gt;Bu ikinci paragraf&lt;/p&gt;
+    &lt;p&gt;Bu üçüncü paragraf&lt;/p&gt;
+    &lt;p&gt;Bu dördüncü paragraf&lt;/p&gt;
+    &lt;p&gt;Bu beşinci paragraf&lt;/p&gt;
+&lt;/div&gt;
+    </code>
+</pre>
+
+<p>Bu kodumuz çalıştığında ilk paragrafta ki içeriğin rengi gri olacak, diğer paragraflar ise olduğu gibi kalacaktır.</p>
+
+<h2>Bir elamanın altında ki tüm ilk elemanlara stil vermek </h2>
+
+<p>Örneğin iki adet "div" elemanımız var ve her elemanımızın içinde 2 tane "strong" elemanımız var. Biz ilk "strong" elemanlarına tek tek stil vermek yerine tek seferde CSS ile stil vererek kodumuzu kısaltmak istiyoruz.</p>
+
+<p>CSS Kodumuz:</p>
+
+<pre>
+    <code class="language-css" prism>
+div strong:first-child {
+    color: blue;
+}
+    </code>
+</pre>
+
+<p>HTML/XHTML Kodu</p>
+
+<pre>
+    <code class="language-markup" prism>
+&lt;div&gt;
+    &lt;strong&gt; Bu vurgulu ve mavi bir metin. &lt;/strong&gt; &lt;strong&gt; Bu ise vurgulu bir metin. &lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    &lt;strong&gt; Bu vurgulu ve mavi bir metin. &lt;/strong&gt; &lt;strong&gt; Bu ise vurgulu bir metin. &lt;/strong&gt;
+&lt;/div&gt;
+    </code>
+</pre>
+
+<h2>İlk elamanın içinde ki elemanların tümüne stil vermek</h2>
+
+<p>Örneğin iki adet "div" elemanımız var ve her elemanımızın içinde 2 tane "strong" elemanımız var. Biz ilk "div" elemanı içinde ki tüm "strong" elemanlarına tek tek stil vermek yerine tek seferde CSS ile stil vererek kodumuzu kısaltmak istiyoruz.</p>
+
+<p>CSS Kodumuz:</p>
+
+<pre>
+    <code class="language-css" prism>
+div:first-child strong {
+    color: blue;
+}
+    </code>
+</pre>
+
+<p>HTML/XHTML Kodu</p>
+
+<pre>
+    <code class="language-markup" prism>
+&lt;div&gt;
+    &lt;strong&gt; Bu vurgulu ve mavi bir metin. &lt;/strong&gt; &lt;strong&gt; Bu vurgulu ve mavi bir metin. &lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    &lt;strong&gt; Bu vurgulu bir metin. &lt;/strong&gt; &lt;strong&gt; Bu vurgulu bir metin. &lt;/strong&gt;
+&lt;/div&gt;
+    </code>
+</pre>

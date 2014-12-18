@@ -1,0 +1,155 @@
+/*
+*
+* Docs Styles
+*
+*/
+@import mixins
+
+/* Article Styles */
+article
+    float left
+    overflow hidden
+    width 800px
+    margin-top 20px
+    padding-bottom 20px
+
+    h1
+    h2
+    h3
+    h4
+        color $green
+
+    h1
+        margin-bottom 30px
+        text-align center
+        font-size 30px
+
+    h2
+        margin 30px 0
+        font-size 18px
+
+    h3
+        margin-top 20px
+        font-size 16px
+    
+    h4
+        font-size 14px
+
+    ul
+        margin 30px 0 30px 40px
+
+        li
+            list-style disc
+            line-height 24px
+            margin-top 5px
+
+    p
+        margin 20px 0
+        line-height 24px
+
+/* Aside Styles */
+aside
+    float left
+    overflow hidden
+    width 200px
+    margin 20px 20px 20px 0
+    border 1px solid $dirtyWhite
+    borderRadius()
+    background $dirtyWhite
+
+    ul
+
+        li
+            position relative
+            margin 1px 1px 2px 1px
+
+            a
+                display block
+                padding 10px 10px 10px 25px
+                background $white
+                color $smokedColor
+
+            &:hover
+                color $dirtyWhite
+
+                a
+                    background $green
+                    color $dirtyWhite
+
+            &:before
+                content "\232A"
+                position absolute
+                top 11px
+                left 11px
+                font-size 12px
+
+            &:last-child
+                margin-bottom 1px
+
+/* Table Styles */
+table
+    border-collapse collapse
+    margin-bottom 30px
+    width 100%
+
+th
+    padding 10px
+    font-weight 500
+    vertical-align middle
+    color $smokedColor
+    background $softGray
+    border-right 1px solid $dirtyWhite
+
+th:first-child
+        border-radius 3px 0 0 0
+
+th:last-child
+        border-radius 0 3px 0 0
+        border-right none
+
+td
+    padding 5px
+    border 1px solid $dirtyWhite
+
+/* Tip and Note Styles */
+.tip
+.note
+    margin 30px 0
+    border 2px solid $dirtyWhite
+    borderRadius()
+
+.tip
+    min-height 150px
+    height auto
+    padding 0 20px 0 100px
+    position relative
+
+    &:before
+        content "\e66a"
+        font-family Helium
+        font-size 75px
+        color $smokedColor
+        position absolute
+        top 50%
+        left 10px
+        margin-top -40px
+
+    h5
+        color $smokedColor
+        margin 10px 0 30px 0
+        text-align center
+        font-size 25px
+
+.note
+    padding 25px 25px 25px 90px
+    position relative
+
+    &:before
+        content "\e612"
+        font-family Helium
+        font-size 50px
+        color $smokedColor
+        position absolute
+        top 50%
+        left 20px
+        margin-top -25px
