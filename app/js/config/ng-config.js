@@ -3,7 +3,8 @@ var grabs = angular.module('grabs', [
         'ngRoute',
         'ngTitle',
         'ngPrism',
-        'ngCodepen'
+        'ngCodepen',
+        'ngDisqus'
     ]);
 
 // Grabs Routing Configuration
