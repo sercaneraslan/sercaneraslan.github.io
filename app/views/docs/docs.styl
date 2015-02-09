@@ -47,6 +47,14 @@ article
         margin 20px 0
         line-height 24px
 
+/* Left Menu Icon */
+.left-menu-icon
+    display none
+    margin-top 10px
+    font-size 40px
+    color $smokedColor
+    cursor pointer
+
 /* Aside Styles */
 aside
     float left
@@ -158,3 +166,20 @@ td
 .disqus
     float right
     width 800px
+
+/* Responsive */
+@media only screen and (max-width: 1135px)
+    article
+    .disqus
+        width 100%
+
+    .left-menu-icon
+    .left-menu-open
+        display block
+
+    aside
+        display none
+        position absolute
+        top 105px
+        left 5%
+        z-index 9

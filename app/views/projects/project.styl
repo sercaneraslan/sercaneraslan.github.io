@@ -18,6 +18,7 @@
 
     .menu
         alignment()
+        width 100%
         margin-top 75px
 
         > li
@@ -37,9 +38,22 @@
                         padding 15px
                         border 2px solid $white
                         border-radius 5px
-                        width 60%
+                        width 70%
                         margin 0 auto
 
                     a
                         color $white
                         font-size 15px
+
+/* Responsive */
+@media only screen and (max-width: 768px)
+    .projects
+        .menu
+            > li
+                margin-bottom 100px
+
+                ul li h2
+                    width 80%
+            li
+                float inherit
+                width inherit

@@ -7,9 +7,8 @@
 @import mixins
 
 .about
-    background linear-gradient(#32B7C6, #E5E9B4)
-    box-sizing border-box
-    padding 20% 0
+    background linear-gradient($blue, $softGreen)
+    padding-top 200px
     position absolute
     top 0
     right 0
@@ -18,26 +17,34 @@
 
     h1
         margin 20px 0px 30px 0
-        font-size 17px
+        font-size 16px
         color $white
         text-align center
 
         span
             display block
-            font-size 32px
+            font-size 30px
             color $white
             margin-bottom 5px
 
     img
         display block
-        height 200px
-        width 200px
+        height 175px
+        width 175px
         border-radius 50%
         margin 0 auto
         border 3px solid $white
+        cursor pointer
+        transition all ease .2s
+
+        &:hover
+            border 3px solid $softGreen
+            box-shadow 0 0 35px 10px $white
+            transition all ease .2s
     
     p
-        width 450px
+        width 90%
+        max-width 450px
         margin 0 auto
         text-align center
         line-height 22px

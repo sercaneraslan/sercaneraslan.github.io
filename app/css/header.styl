@@ -7,7 +7,7 @@
 
 header
     background rgba(255, 255, 255, 0.5)
-    height 65px
+    height $headerHeight
     z-index 10
     position fixed
     top 0
@@ -16,6 +16,14 @@ header
 
     div
         alignment()
+
+    span
+        display none
+        float right
+        margin-top 9px
+        font-size 40px
+        color $white
+        cursor pointer
 
     p
         float left
@@ -29,10 +37,6 @@ header
             border 2px solid $white
             border-radius 60px
             position relative
-
-            &:hover
-                color $white
-                transition all ease .5s
 
             &:before
                 content "\e639"
@@ -86,3 +90,72 @@ header
 
         ul li a
             color dirtyWhite
+
+/* Responsive */
+@media only screen and (max-width: 768px)
+    header
+        p a
+            color transparent
+            padding 0
+            margin-top 13px
+            width 40px
+            border none
+
+            &:before
+                left 0
+
+        span
+            display block
+
+        ul
+            display none
+
+        .header-menu-open
+            position relative
+
+            ul
+                display block
+                background linear-gradient($blue, $softGreen)
+                float inherit
+                margin 0
+                padding 5px 0
+                border 2px solid $white
+                borderRadius()
+                position absolute
+                top 55px
+                right 5px
+
+                li
+                    float inherit
+                    margin 0
+                    padding 5px 25px
+                    text-align center
+
+    /* Documents Header */
+    .xhtml
+    .css
+    .html5
+        header
+            p a
+                background inherit
+                color $smokedColor
+                border none
+
+                &:hover
+                    color $smokedColor
+                    background inherit
+
+                &:before
+                &:hover:before
+                    color $dirtyWhite
+
+            span
+                color $dirtyWhite
+
+        .header-menu-open
+            ul
+                background $smokedColor
+                border-color $dirtyWhite
+
+                a
+                    color $dirtyWhite

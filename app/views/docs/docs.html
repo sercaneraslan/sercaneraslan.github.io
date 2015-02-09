@@ -1,4 +1,6 @@
-<aside>
+<span class="left-menu-icon" ng-click="openLeftMenu = true">&#9776;</span>
+
+<aside ng-class="{'left-menu-open': openLeftMenu}">
     <!-- XHTML -->
     <ul ng-if="pageName === 'xhtml'">
         <li><a href="/xhtml/giris">Giriş</a></li>

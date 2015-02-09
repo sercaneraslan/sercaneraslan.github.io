@@ -1,8 +1,11 @@
-<div>
+<div ng-class="{'header-menu-open': openHeaderMenu}">
     <p>
         <a href="/">Sercan Eraslan</a>
     </p>
-    <ul>
+
+    <span ng-click="openHeaderMenu = true">&#9776;</span>
+
+    <ul ng-click="openHeaderMenu = false">
         <li>
             <a href="/projeler">PROJELER</a>
         </li>
