@@ -6,19 +6,11 @@
 
 @import mixins
 
-.books
-    background linear-gradient(#32B7C6, #E5E9B4)
-    box-sizing border-box
-    padding 20% 0
-    position absolute
-    top 0
-    right 0
-    left 0
-    bottom 0
+.booksPage
+    background gradient()
 
-    > div
-        alignment()
-        padding-top 100px
+.books
+    padding-top 20%
 
     .sub-title
         color $white
@@ -33,7 +25,7 @@
     float left
     width 130px
     height 180px
-    margin 75px 85px 200px 115px
+    margin 90px 86px 130px 115px
     -webkit-perspective 1000px
     perspective 1000px
     -webkit-transform-style preserve-3d
@@ -179,7 +171,7 @@
 
 /* Buttons */
 .book-buttons
-    margin 55px 25px
+    margin 65px 25px
 
 .book-buttons
     a
@@ -204,7 +196,7 @@ figcaption
     text-align center
     color $white
     position absolute
-    top -100px
+    top -90px
     left -74px
 
     h2
@@ -218,11 +210,23 @@ figcaption
         text-align center
         width 200px
         position absolute
-        top 325px
+        top 305px
         left 35px
 
 /* Responsive */
-@media only screen and (max-width: 768px)
+@media only screen and (max-width 1140px)
+    .books
+        margin 0px auto
+        width 680px
+
+@media only screen and (max-width 768px)
+    .books
+        margin inherit
+        width inherit
+
     .book
-       float inherit
-       margin 75px auto 250px auto
+        float inherit
+        margin 100px auto 230px auto
+       
+        &:last-child
+            margin-bottom 130px
