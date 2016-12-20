@@ -1,8 +1,14 @@
+/*
+*
+*  ______  ______ _______ ______  _______
+* |  ____ |_____/ |_____| |_____] |______
+* |_____| |    \_ |     | |_____] ______|
+*
+* Grabs - Front-End Development Environment
+*
+*/
 module.exports = function (grunt) {
-
-    var modRewrite = require('connect-modrewrite'),
-        myHash = new Date().valueOf().toString(),
-        config = grunt.file.readJSON('config.json'),
+    var myHash = new Date().valueOf().toString(),
         sortedJsPaths = [
             'js/components/angular/*.js',
             'js/components/angular-route/*.js',
@@ -13,9 +19,6 @@ module.exports = function (grunt) {
             'css/reset.',
             'css/global.',
             'css/**/*.',
-            'views/**/*.'
-        ],
-        sortedHtmlPaths = [
             'views/**/*.'
         ],
         editFilePaths = function (pathsArray, rootDirectory, fileType) {
@@ -39,13 +42,12 @@ module.exports = function (grunt) {
         };
 
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        config: config,
-
         hash: myHash,
+
         clean: {
             build: 'build'
         },
+
         stylus: {
             development: {
                 options: {
@@ -65,8 +67,9 @@ module.exports = function (grunt) {
                 }
             }
         },
+
         copy: {
-            html: { // For HTML
+            html: {
                 expand: true,
                 cwd: 'app',
                 src: ['views/**/*.html', '!views/index.html'],
@@ -100,21 +103,14 @@ module.exports = function (grunt) {
                 filter: 'isFile'
             }
         },
-        jade: { // For Jade
-            development: {
-                options: {
-                    pretty: true
-                },
-                files: createFilePaths(sortedHtmlPaths, 'jade', 'html')
+
+        eslint: {
+            options: {
+                config: '.eslintrc'
             },
-            live: {
-                files: createFilePaths(sortedHtmlPaths, 'jade', 'html')
-            }
+            target: ['app/views/**/*.js']
         },
-        jshint: {
-            files: 'app/views/**/*.js',
-            options: config.jshint
-        },
+
         plato: {
             report: {
                 files: {
@@ -122,27 +118,22 @@ module.exports = function (grunt) {
                 }
             }
         },
+
         connect: {
             options: {
                 port: 9000,
                 livereload: 35729,
                 hostname: 'localhost',
-                open: true
+                open: true,
+                middleware: function(connect, options, middlewares) {
+                    var modRewrite = require('connect-modrewrite');
+                    middlewares.unshift(modRewrite(['!(\\..+)$ / [L]']));
+                    return middlewares;
+                }
             },
             server: {
                 options: {
-                    base: 'build',
-                    middleware: function(connect, options) {
-                        var middlewares = [];
-
-                        middlewares.push(modRewrite(['^[^\\.]*$ /index.html [L]']));
-
-                        options.base.forEach(function(base) {
-                            middlewares.push(connect.static(base));
-                        });
-
-                        return middlewares;
-                    }
+                    base: 'build'
                 }
             },
             report: {
@@ -152,6 +143,7 @@ module.exports = function (grunt) {
                 }
             }
         },
+
         bower: {
             options: {
                 targetDir: 'app/js/components',
@@ -161,6 +153,7 @@ module.exports = function (grunt) {
             },
             install: {}
         },
+
         htmlmin: {
             options: {
                 removeComments: true,
@@ -170,13 +163,14 @@ module.exports = function (grunt) {
                 src: 'build/index.html',
                 dest: 'build/index.html'
             },
-            views: { // For HTML
+            views: {
                 expand: true,
                 cwd: 'app',
                 src: ['views/**/*.html', '!views/index.html'],
                 dest: 'build'
             }
         },
+
         imagemin: {
             png: {
                 options: {
@@ -191,6 +185,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
+
         uglify: {
             options: {
                 'lift-vars': false,
@@ -205,13 +200,34 @@ module.exports = function (grunt) {
                 }
             }
         },
+
+        traceur: {
+            options: {
+                experimental: true,
+                blockBinding: true,
+                moduleNaming: {
+                    stripPrefix: "src/es6",
+                    addPrefix: "com/grabs/project"
+                },
+                copyRuntime: 'build/es6/'
+            },
+            custom: {
+                files: [{
+                    expand: true,
+                    cwd: 'app/es6/',
+                    src: '*.js',
+                    dest: 'build/es6/'
+                }]
+            }
+        },
+
         notify_hooks: {
             options: {
                 enabled: true,
-                max_jshint_notifications: 5,
                 title: "Grabs"
             }
         },
+
         notify: {
             watch: {
                 options: {
@@ -219,19 +235,20 @@ module.exports = function (grunt) {
                 }
             }
         },
+
         sprite: {
             normal: {
                 src: 'app/img/sprite/**/*.*',
-                destImg: 'build/img/sprite-<%= hash %>.png',
-                destCSS: 'app/css/sprite.styl',
+                dest: 'build/img/sprite-<%= hash %>.png',
+                destCss: 'app/css/sprite.styl',
                 imgPath: '/img/sprite-<%= hash %>.png',
                 algorithm: 'binary-tree',
                 padding: 1
             },
             retina: {
                 src: 'app/img/sprite-retina/**/*.*',
-                destImg: 'build/img/sprite-retina-<%= hash %>.png',
-                destCSS: 'app/css/sprite-retina.styl',
+                dest: 'build/img/sprite-retina-<%= hash %>.png',
+                destCss: 'app/css/sprite-retina.styl',
                 imgPath: '/img/sprite-retina-<%= hash %>.png',
                 algorithm: 'binary-tree',
                 padding: 2,
@@ -240,6 +257,7 @@ module.exports = function (grunt) {
                 }
             }
         },
+
         template: {
             development: {
                 src: 'app/views/index.html',
@@ -265,13 +283,7 @@ module.exports = function (grunt) {
                 }
             }
         },
-        github_pages_foldering: {
-            default: {
-                urls: config.urls,
-                index: 'build/index.html',
-                cwd: 'build'
-            }
-        },
+
         watch: {
             all: {
                 options: {
@@ -279,13 +291,9 @@ module.exports = function (grunt) {
                 },
                 files: 'app/**/*'
             },
-            html: { // For HTML and index.html
+            html: {
                 files: 'app/**/*.html',
                 tasks: ['copy:html', 'template:development']
-            },
-            jade: { // For Jade
-                files: 'app/**/*.jade',
-                tasks: 'jade:development'
             },
             css: {
                 files: 'app/**/*.styl',
@@ -293,7 +301,7 @@ module.exports = function (grunt) {
             },
             js: {
                 files: 'app/**/*.js',
-                tasks: ['copy:js', 'jshint']
+                tasks: ['copy:js', 'eslint']
             },
             json: {
                 files: 'app/**/*.json',
@@ -302,17 +310,13 @@ module.exports = function (grunt) {
         }
     });
 
-    // Load Npm Tasks
-    require('load-grunt-tasks')(grunt);
-
-    // Run Notify
-    grunt.task.run('notify_hooks');
+    require('load-grunt-tasks')(grunt); // Load Npm Tasks
+    grunt.task.run('notify_hooks'); // Run Notify
 
     // $ grunt
     grunt.registerTask('default', [
         'clean',
-        //'jade:development', // For Jade
-        'copy:html', // For HTML
+        'copy:html',
         'copy:json',
         'copy:img',
         'copy:font',
@@ -324,30 +328,32 @@ module.exports = function (grunt) {
         'notify:watch',
         'watch'
     ]);
+
     // $ grunt live
     grunt.registerTask('live', [
         'clean',
         'copy:json',
         'copy:img',
         'copy:font',
-        //'sprite',
+        'sprite',
         'stylus:live',
-        //'jade:live', // For Jade
-        'htmlmin:views', // For HTML
+        'htmlmin:views',
         'uglify:live',
-        //'imagemin',
+        'imagemin',
         'template:live',
         'htmlmin:index',
         'connect:server',
         'watch'
     ]);
+
     // $ grunt report
     grunt.registerTask('report', [
         'plato:report',
         'connect:report'
     ]);
-    // $ grunt github-pages
-    grunt.registerTask('github-pages', [
-        'github_pages_foldering'
+
+    // $ grunt es6
+    grunt.registerTask('es6', [
+        'traceur'
     ]);
 };
