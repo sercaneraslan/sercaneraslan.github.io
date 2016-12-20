@@ -9,6 +9,7 @@
 */
 module.exports = function (grunt) {
     var myHash = new Date().valueOf().toString(),
+        config = grunt.file.readJSON('config.json'),
         sortedJsPaths = [
             'js/components/angular/*.js',
             'js/components/angular-route/*.js',
@@ -43,6 +44,7 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         hash: myHash,
+        config: config,
 
         clean: {
             build: 'build'
@@ -358,6 +360,11 @@ module.exports = function (grunt) {
     grunt.registerTask('report', [
         'plato:report',
         'connect:report'
+    ]);
+
+    // $ grunt github-pages
+    grunt.registerTask('github-pages', [
+        'github_pages_foldering'
     ]);
 
     // $ grunt es6
