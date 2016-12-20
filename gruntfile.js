@@ -335,7 +335,7 @@ module.exports = function (grunt) {
         'copy:json',
         'copy:img',
         'copy:font',
-        'sprite',
+        //'sprite',
         'stylus:live',
         'htmlmin:views',
         'uglify:live',
