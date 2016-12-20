@@ -1,7 +1,7 @@
-grabs.controller('DocsCtrl', ['$scope', '$routeParams', '$route', '$rootScope', '$http', function ($scope, $routeParams, $route, $rootScope, $http) {
+angular.module('grabs').controller('DocsCtrl', ['$scope', '$routeParams', '$route', '$rootScope', '$http', function ($scope, $routeParams, $route, $rootScope, $http) {
     'use strict';
 
-    var docsMenu = JSON.parse(localStorage.getItem('docsMenu')),
+    var docsMenu = JSON.parse(window.localStorage.getItem('docsMenu')),
         createMenu = function (data) {
             $scope.menu = data[$rootScope.pageName];
             $scope.subPageName = 'giris';
@@ -21,7 +21,7 @@ grabs.controller('DocsCtrl', ['$scope', '$routeParams', '$route', '$rootScope', 
     } else {
         $http.get('views/docs/docs.json').success(function (data) {
             createMenu(data);
-            localStorage.setItem('docsMenu', JSON.stringify(data));
+            window.localStorage.setItem('docsMenu', JSON.stringify(data));
         });
     }
 
