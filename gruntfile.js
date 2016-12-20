@@ -201,6 +201,14 @@ module.exports = function (grunt) {
             }
         },
 
+        github_pages_foldering: {
+            default: {
+                urls: config.urls,
+                index: 'build/index.html',
+                cwd: 'build'
+            }
+        },
+
         traceur: {
             options: {
                 experimental: true,
