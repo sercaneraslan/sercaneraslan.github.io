@@ -1,25 +1,17 @@
 {
-    "name": "grabs",
-    "description": "Grabs - Front-End Development Environment",
-    "author" : "Grabs",
+    "name": "sepw",
+    "description": "Sercan Eraslan Personal Website",
+    "author" : "Sercan Eraslan",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/sercaneraslan/grabs.git"
+        "url": "https://github.com/sercaneraslan/sercaneraslan.github.io.git"
     },
-    "homepage": "http://grabs.in",
+    "homepage": "http://sercaneraslan.com",
     "version": "0.1.0",
     "main": [],
     "ignore": "",
-    "keywords": [
-        "framework",
-        "component",
-        "front-end",
-        "development",
-        "environment",
-        "app",
-        "grabs"
-    ],
+    "keywords": [],
     "dependencies": {
         "angular": "1.5.8",
         "angular-route": "1.5.8"

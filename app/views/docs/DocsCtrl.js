@@ -1,4 +1,4 @@
-angular.module('grabs').controller('DocsCtrl', ['$scope', '$routeParams', '$route', '$rootScope', '$http', function ($scope, $routeParams, $route, $rootScope, $http) {
+angular.module('sepw').controller('DocsCtrl', ['$scope', '$routeParams', '$route', '$rootScope', '$http', function ($scope, $routeParams, $route, $rootScope, $http) {
     'use strict';
 
     var docsMenu = JSON.parse(window.localStorage.getItem('docsMenu')),

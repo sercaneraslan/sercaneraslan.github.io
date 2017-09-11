@@ -1,13 +1,13 @@
-// Defined Grabs Module
-var grabs = angular.module('grabs', [
+// Defined SEPW (Sercan Eraslan Personal Website) Module
+var sepw = angular.module('sepw', [
         'ngRoute',
         'ngHead',
         'ngPrism',
         'ngCodepen'
     ]);
 
-// Grabs Routing Configuration
-grabs.config(['$locationProvider', '$routeProvider', '$compileProvider', function ($locationProvider, $routeProvider, $compileProvider) {
+// SEPW Routing Configuration
+sepw.config(['$locationProvider', '$routeProvider', '$compileProvider', function ($locationProvider, $routeProvider, $compileProvider) {
     'use strict';
 
     // HTML5 Push State
