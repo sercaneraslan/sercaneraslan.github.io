@@ -1,6 +1,5 @@
-<a href="http://sercaneraslan.com">
+
 ![sercaneraslan](https://github.com/sercaneraslan/sercaneraslan.github.io/blob/creator/app/img/static/readme.png)
-</a>
 
 Sercan Eraslan Website on Github Pages
 ======================================
