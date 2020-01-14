@@ -22,11 +22,11 @@ sepw.config(['$locationProvider', '$routeProvider', '$compileProvider', function
         name: 'homePage'
     }).
 
-    /* Projects */
-    when('/projeler', {
-        templateUrl: '/views/projects/projects.html',
+    /* Uses */
+    when('/uses', {
+        templateUrl: '/views/uses/uses.html',
         controller: 'CommonCtrl',
-        name: 'projectsPage'
+        name: 'usesPage'
     }).
 
     /* Books */

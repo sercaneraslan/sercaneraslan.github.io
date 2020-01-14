@@ -1,0 +1,58 @@
+/*
+*
+* Uses Styles
+*
+*/
+
+@import mixins
+
+.usesPage
+    background gradient()
+
+.uses
+    padding-top 20%
+
+    ul
+        overflow hidden
+
+        > li
+            float left
+            width 340px
+
+            ul
+                li
+                    float none
+                    margin-bottom 20px
+                    text-align center
+                    color $white
+                    font-size 15px
+
+                    h2
+                        width 230px
+                        font-size 25px
+                        margin-bottom 50px
+                        color $white
+                        padding 15px
+                        border 2px solid $white
+                        border-radius 5px
+                        margin 0 auto
+
+/* Responsive */
+@media only screen and (max-width 1140px)
+    .uses
+        ul
+            margin 0px auto
+            width 680px
+
+@media only screen and (max-width 768px)
+    .uses
+        ul
+            margin inherit
+            width inherit
+
+            > li
+                margin-bottom 30px
+
+            li
+                float inherit
+                width inherit
