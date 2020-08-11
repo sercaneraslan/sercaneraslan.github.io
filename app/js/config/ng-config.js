@@ -1,5 +1,5 @@
 // Defined SEPW (Sercan Eraslan Personal Website) Module
-var sepw = angular.module('sepw', [
+window.sepw = angular.module('sepw', [
         'ngRoute',
         'ngHead',
         'ngPrism',
@@ -7,7 +7,7 @@ var sepw = angular.module('sepw', [
     ]);
 
 // SEPW Routing Configuration
-sepw.config(['$locationProvider', '$routeProvider', '$compileProvider', function ($locationProvider, $routeProvider, $compileProvider) {
+angular.module('sepw').config(['$locationProvider', '$routeProvider', '$compileProvider', function ($locationProvider, $routeProvider, $compileProvider) {
     'use strict';
 
     // HTML5 Push State

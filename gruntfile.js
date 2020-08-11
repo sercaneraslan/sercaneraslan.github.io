@@ -11,8 +11,8 @@ module.exports = function (grunt) {
     var myHash = new Date().valueOf().toString(),
         config = grunt.file.readJSON('config.json'),
         sortedJsPaths = [
-            'js/components/angular/*.js',
-            'js/components/angular-route/*.js',
+            'js/components/angular.js',
+            'js/components/angular-route.js',
             'js/**/*.js',
             'views/**/*.js'
         ],
@@ -113,14 +113,6 @@ module.exports = function (grunt) {
             target: ['app/views/**/*.js']
         },
 
-        plato: {
-            report: {
-                files: {
-                    'reports/': ['app/js/**/*.js', 'app/views/**/*.js', '!app/js/components/**/*.js'],
-                }
-            }
-        },
-
         connect: {
             options: {
                 port: 9000,
@@ -138,22 +130,21 @@ module.exports = function (grunt) {
                     base: 'build'
                 }
             },
-            report: {
-                options: {
-                    base: 'reports',
-                    keepalive: true
-                }
-            }
         },
 
-        bower: {
+        bowercopy: {
             options: {
-                targetDir: 'app/js/components',
-                cleanTargetDir: false,
-                cleanBowerDir: true,
-                verbose: true
+                clean: true
             },
-            install: {}
+            libs: {
+                options: {
+                    destPrefix: 'app/js/components/'
+                },
+                files: {
+                    'angular.js': 'angular/angular.js',
+                    'angular-route.js': 'angular-route/angular-route.js'
+                },
+            }
         },
 
         htmlmin: {
@@ -208,26 +199,6 @@ module.exports = function (grunt) {
                 urls: config.urls,
                 index: 'build/index.html',
                 cwd: 'build'
-            }
-        },
-
-        traceur: {
-            options: {
-                experimental: true,
-                blockBinding: true,
-                moduleNaming: {
-                    stripPrefix: "src/es6",
-                    addPrefix: "com/grabs/project"
-                },
-                copyRuntime: 'build/es6/'
-            },
-            custom: {
-                files: [{
-                    expand: true,
-                    cwd: 'app/es6/',
-                    src: '*.js',
-                    dest: 'build/es6/'
-                }]
             }
         },
 
@@ -356,19 +327,8 @@ module.exports = function (grunt) {
         'watch'
     ]);
 
-    // $ grunt report
-    grunt.registerTask('report', [
-        'plato:report',
-        'connect:report'
-    ]);
-
     // $ grunt github-pages
     grunt.registerTask('github-pages', [
         'github_pages_foldering'
-    ]);
-
-    // $ grunt es6
-    grunt.registerTask('es6', [
-        'traceur'
     ]);
 };

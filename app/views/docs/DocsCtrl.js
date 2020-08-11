@@ -19,10 +19,9 @@ angular.module('sepw').controller('DocsCtrl', ['$scope', '$routeParams', '$route
     if (docsMenu) {
         createMenu(docsMenu);
     } else {
-        $http.get('views/docs/docs.json').success(function (data) {
-            createMenu(data);
-            window.localStorage.setItem('docsMenu', JSON.stringify(data));
+        $http.get('views/docs/docs.json').then(function (data) {
+            createMenu(data.data);
+            window.localStorage.setItem('docsMenu', JSON.stringify(data.data));
         });
     }
-
 }]);
