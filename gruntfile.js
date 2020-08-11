@@ -323,12 +323,8 @@ module.exports = function (grunt) {
         'imagemin',
         'template:live',
         'htmlmin:index',
+        'github_pages_foldering',
         'connect:server',
         'watch'
-    ]);
-
-    // $ grunt github-pages
-    grunt.registerTask('github-pages', [
-        'github_pages_foldering'
     ]);
 };
